@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Ads App</title>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+</head>
+<body ng-app="AdsModule" ng-controller="Hello">
+<div class="jumbotron">{{name}}</div>
+<div ng-view></div>
+
+<script type="text/javascript" src="lib/angular/angular.js"></script>
+<script type="text/javascript" src="js/app.js"></script>
+<script type="text/javascript">
+	app.controller('Hello',
+	function Hello($scope) {	
+		$scope.name='tralal';
+	});
+</script>
+</body>
+</html>
+
