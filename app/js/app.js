@@ -5,7 +5,11 @@ var app = angular.module('AdsModule',['ngRoute']).config(function ($routeProvide
 	});
 
 	$routeProvider.when('/ads',{
-		templateUrl:'templates/all-ads.html ';
-	})
+		templateUrl:'templates/all-ads.html '
+	});
+	$routeProvider.when('/login',{
+		templateUrl:'templates/login.html '
+	});
+	$routeProvider.otherwise({redirectTo: '/ads'});
 
 });
