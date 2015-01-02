@@ -1,0 +1,1 @@
+app.controller('ads.controller',function)
