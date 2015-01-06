@@ -12,4 +12,8 @@ app.controller('AdsController',function  ($scope,mainData){
 
 	});
 
+	$scope.register=function (user){
+		userData.register(user);
+	}
+
 })
