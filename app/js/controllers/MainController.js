@@ -1,4 +1,5 @@
 app.controller('AdsController',function  ($scope, $location,mainData, userData){
+	
 	mainData.getAllAds(function(resp){
 		$scope.data=resp;
 
@@ -14,6 +15,7 @@ app.controller('AdsController',function  ($scope, $location,mainData, userData){
 
 	 $scope.isLoged=!!localStorage.getItem("username");
 	 $scope.username = localStorage.getItem("username");
+
 
 	$scope.register=function (user){
 		userData.register(user)
@@ -36,5 +38,4 @@ app.controller('AdsController',function  ($scope, $location,mainData, userData){
 		localStorage.removeItem("username");
 		location.reload();
 	}
-
 })

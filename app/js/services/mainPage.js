@@ -5,6 +5,7 @@ app.factory('mainData',function($http,$log){
 			$http({method: 'GET',url:'http://softuni-ads.azurewebsites.net/api/ads?PageSize=10&Startpage=1'})
 			.success(function(data, status, headers, config){
 				success(data);
+
 			})
 			.error(function(data, status, headers, config){
 				$log.warn(data);
