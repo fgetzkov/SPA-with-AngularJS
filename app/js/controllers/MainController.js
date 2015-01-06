@@ -1,4 +1,4 @@
-app.controller('AdsController',function  ($scope,mainData){
+app.controller('AdsController',function  ($scope, mainData, userData){
 	mainData.getAllAds(function(resp){
 		$scope.data=resp;
 

@@ -1,4 +1,4 @@
-var app = angular.module('AdsModule',['ngRoute']).config(function ($routeProvider) {
+var app = angular.module('AdsModule',['ngRoute', 'ngResource']).config(function ($routeProvider) {
 	$routeProvider.when('/register',{
 		templateUrl:'templates/register.html',
 		controler:'app'
@@ -13,3 +13,5 @@ var app = angular.module('AdsModule',['ngRoute']).config(function ($routeProvide
 	$routeProvider.otherwise({redirectTo: '/ads'});
 
 });
+
+app.constant('baseServiceUrl', 'http://softuni-ads.azurewebsites.net/api/');

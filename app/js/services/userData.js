@@ -1,5 +1,5 @@
-var baseServiceUrl='http://softuni-ads.azurewebsites.net/api/';
-app2.factory('userData', ['$resource','baseServiceUrl',function($resource){
+
+app.factory('userData', ['$resource','baseServiceUrl',function($resource, baseServiceUrl){
 	
 	function registerUser (user) {
 		return $resource(baseServiceUrl+'user/register').save(user);
