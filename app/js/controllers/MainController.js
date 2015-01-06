@@ -1,4 +1,4 @@
-app.controller('AdsController',function  ($scope, mainData, userData){
+app.controller('AdsController',function  ($scope, $location,mainData, userData){
 	mainData.getAllAds(function(resp){
 		$scope.data=resp;
 
@@ -12,8 +12,29 @@ app.controller('AdsController',function  ($scope, mainData, userData){
 
 	});
 
+	 $scope.isLoged=!!localStorage.getItem("username");
+	 $scope.username = localStorage.getItem("username");
+
 	$scope.register=function (user){
-		userData.register(user);
+		userData.register(user)
+		location.reload();
+
+	}
+
+	$scope.login=function (user){
+		
+		userData.login(user)
+		.$promise
+		.then(function(data){
+			localStorage.setItem("username", data.username)
+			$scope.isloged = true;
+			location.reload();
+
+		});
+	}
+	$scope.logout=function (){
+		localStorage.removeItem("username");
+		location.reload();
 	}
 
 })

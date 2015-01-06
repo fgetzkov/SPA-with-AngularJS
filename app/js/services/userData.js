@@ -5,7 +5,7 @@ app.factory('userData', ['$resource','baseServiceUrl',function($resource, baseSe
 		return $resource(baseServiceUrl+'user/register').save(user);
 	}
 	function loginUser (user) {
-		// body...
+		return $resource(baseServiceUrl+'user/login').save(user);
 	}
 	function logoutUser () {
 		// body...
