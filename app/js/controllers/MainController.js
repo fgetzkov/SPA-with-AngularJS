@@ -1,9 +1,34 @@
-app.controller('AdsController',function  ($scope, $location,mainData, userData, pageSize){
+app.controller('AdsController',function  ($scope, $location,mainData, userData, pageSize, adsService){
 	
 	$scope.adsParams = {
           'startPage' : 1,
           'pageSize' : pageSize
       };
+
+       $scope.reloadAds = function() {
+          adsService.getAds(
+              $scope.adsParams,
+              function success(data) {
+                  $scope.ads = data;
+              }            
+          );
+      };
+
+      $scope.reloadAds();
+      $scope.$on("categorySelectionChanged", function(event, selectedCategoryId) {
+            $scope.adsParams.categoryId = selectedCategoryId;
+            $scope.adsParams.startPage = 1;
+            $scope.reloadAds();
+        });
+
+        // This event is sent by RightSideBarController when the current town is changed
+        $scope.$on("townSelectionChanged", function(event, selectedTownId) {
+            $scope.adsParams.townId = selectedTownId;
+            $scope.adsParams.startPage = 1;
+            $scope.reloadAds();
+        });
+
+
 
 	mainData.getAllAds(function(resp){
 		$scope.data=resp;
@@ -43,4 +68,19 @@ app.controller('AdsController',function  ($scope, $location,mainData, userData, 
 		localStorage.removeItem("username");
 		location.reload();
 	}
+
+	$scope.RightSidebarController=function (categoriesService, townsService) {
+        $scope.categories = categoriesService.getCategories();
+        $scope.towns = townsService.getTowns();
+
+        $scope.categoryClicked = function(clickedCategoryId) {
+            $scope.selectedCategoryId = clickedCategoryId;
+            $rootScope.$broadcast("categorySelectionChanged", clickedCategoryId);
+        };
+
+        $scope.townClicked = function(clickedTownId) {
+            $scope.selectedTownId = clickedTownId;
+            $rootScope.$broadcast("townSelectionChanged", clickedTownId);
+        };
+    }
 })
