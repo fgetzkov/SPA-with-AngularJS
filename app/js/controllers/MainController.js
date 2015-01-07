@@ -1,5 +1,10 @@
-app.controller('AdsController',function  ($scope, $location,mainData, userData){
+app.controller('AdsController',function  ($scope, $location,mainData, userData, pageSize){
 	
+	$scope.adsParams = {
+          'startPage' : 1,
+          'pageSize' : pageSize
+      };
+
 	mainData.getAllAds(function(resp){
 		$scope.data=resp;
 
