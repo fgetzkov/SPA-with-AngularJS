@@ -3,7 +3,7 @@
       <div class="container">
         <div class="navbar-header">
           <a href="../" class="navbar-brand">Philip Shop</a>
-          <div ng-if="isLoged" >{{ username }}</div>
+          <div ng-if="isLoged" > <strong>Welcome </strong> {{ username }} </strong></div>
           <div ng-if="Admin">ADMIN E</div>
           <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main">          
           </button>
@@ -12,14 +12,24 @@
           <ul class="nav navbar-nav">  
           	<li>
               <a href="#/ads">All Ads</a>
-            </li>         
+            </li>
+            <li>
+              <a href="#" ng-show="isLoged">Edit Profile</a>
+            </li> 
+            <li>
+              <a href="#" ng-show="isLoged">Publish New Ad</a>
+            </li>
+            <li>
+              <a href="#" ng-show="isLoged">My Ads</a>
+            </li>               
             <li>
               <a href="#/login" ng-hide="isLoged">Login</a>
               <a href="#/login" ng-show="isLoged" ng-click="logout()">Logout</a>
             </li>
             <li>
               <a href="#/register" ng-hide="isLoged">Register</a>
-            </li>            
+            </li>
+                  
           </ul>
         </div>
       </div>

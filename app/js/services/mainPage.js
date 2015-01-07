@@ -2,7 +2,7 @@ app.factory('mainData',function($http,$log){
 
 	return {
 		getAllAds:function (success){
-			$http({method: 'GET',url:'http://softuni-ads.azurewebsites.net/api/ads?PageSize=10&Startpage=1'})
+			$http({method: 'GET',url:'http://softuni-ads.azurewebsites.net/api/ads?PageSize=10&Startpage=2'})
 			.success(function(data, status, headers, config){
 				success(data);
 
