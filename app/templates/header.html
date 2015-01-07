@@ -1,0 +1,27 @@
+<div class="jumbotron">
+<div class="navbar navbar-default">
+      <div class="container">
+        <div class="navbar-header">
+          <a href="../" class="navbar-brand">Philip Shop</a>
+          <div ng-if="isLoged" >{{ username }}</div>
+          <div ng-if="Admin">ADMIN E</div>
+          <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main">          
+          </button>
+        </div>
+        <div class="navbar-collapse collapse" id="navbar-main">
+          <ul class="nav navbar-nav">  
+          	<li>
+              <a href="#/ads">All Ads</a>
+            </li>         
+            <li>
+              <a href="#/login" ng-hide="isLoged">Login</a>
+              <a href="#/login" ng-show="isLoged" ng-click="logout()">Logout</a>
+            </li>
+            <li>
+              <a href="#/register" ng-hide="isLoged">Register</a>
+            </li>            
+          </ul>
+        </div>
+      </div>
+    </div>
+</div>
