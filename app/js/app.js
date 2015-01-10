@@ -15,4 +15,4 @@ var app = angular.module('AdsModule',['ngRoute', 'ngResource','ui.bootstrap.pagi
 });
 
 app.constant('baseServiceUrl', 'http://softuni-ads.azurewebsites.net/api/');
-app.constant('pageSize', 2);
+app.constant('pageSize', 5);
