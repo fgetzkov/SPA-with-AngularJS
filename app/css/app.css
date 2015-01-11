@@ -7,7 +7,7 @@
 }
 body {
     font-family: Calibri, Arial, serif;
-    background-color: #3399FF;
+    background-color: #66CCFF;
 }
 
 #app-header {
@@ -106,7 +106,7 @@ ul.sidebar-menu li.special {
 }
 
 ul.sidebar-menu li.selected {
-    background: #DAA600;
+    background: #66CCFF;
     border: 1px solid #7F6000;
 }
 
